@@ -50,6 +50,44 @@ form input, button{
     background-color: #2851f5;
 }
 
+.controls{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid grey;
+    min-width: 300px;
+    margin-top: 20px;
+    padding:0 50px;
+    padding-bottom: 20px;
+}
+
+.date-button{
+    min-width: 90px;
+}
+
+.week{
+    grid-column: 1/2;
+}
+
+.month{
+    grid-column: 2/3;
+}
+
+.days-90{
+    grid-column: 3/4;
+}
+
+.days-180{
+    grid-column: 1/2;
+}
+
+.year{
+    grid-column: 2/3;
+}
+
+.all{
+    grid-column: 3/4;
+}
+
 #date{
     min-height: 30px;
 }

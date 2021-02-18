@@ -19,6 +19,18 @@
             <input type="date" name="date" id="date">
             <button class="button-add">Add</button>
         </form>
+ 
+        <div class="controls">
+            <button class="week date-button">Week</button>
+            <button class="month date-button">Month</button>
+            <button class="days-90 date-button">90 Days</button>
+            <button class="days-180 date-button">180 Days</button>
+            <button class="year date-button">1 Year</button>
+            <button class="all date-button">All</button>
+        </div>
+        
+        
+
         <h1 class="margin-top-20">List Of Weights</h1>
         <% if (weights.length > 0) { %>
         <% weights.forEach(weight => { %>
@@ -49,6 +61,11 @@
                 .then((data) => window.location.href= data.redirect)
                 .catch(err => console.log(err));
              })
+             })
+
+             const week = document.querySelector(".week")
+             week.addEventListener('click', () => {
+                console.log('button clicked');
              })
 
              
