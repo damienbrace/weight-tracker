@@ -14,3 +14,5 @@ const weightSchema = new Schema({
 
 const Weight = mongoose.model('Weight', weightSchema);
 module.exports = Weight;
+
+//test feature
