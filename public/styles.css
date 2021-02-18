@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.delete{
+    cursor: pointer;
+    background-color: #f74c43;
+    color: white;
+    min-width: 100px;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.delete:hover{
+    background-color: #ff2014;
+}
+
+.button-add{
+    cursor: pointer;
+    background-color: #6180fa;
+    color: white;
+    min-width: 100px;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+.button-add:hover{
+    background-color: #2851f5;
+}
+
+#date{
+    min-height: 30px;
+}
