@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Weight = require('./models/weights');
+const moment = require('moment');
 
 // express app
 const app = express();
@@ -11,6 +12,14 @@ const ejs = require('ejs');
 // middleware & static files
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true}));
+let currentDate = new Date();
+let weekFilter = moment().subtract(7, 'days').calendar();
+let monthFilter = moment().subtract(1, 'month').calendar();
+let days90Filter = moment().subtract(90, 'days').calendar();
+let days180Filter = moment().subtract(180, 'days').calendar();
+let yearFilter = moment().subtract(1, 'year').calendar();
+
+
 
 app.get('/', (req, res) => {
     Weight.find()
@@ -21,6 +30,57 @@ app.get('/', (req, res) => {
             console.log(err);
         });
 });
+
+app.get('/week', (req, res) => {
+    Weight.find({ date: { $gte: weekFilter, $lte: currentDate}})
+        .then((result) => {
+            res.render('index', {weights: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get('/month', (req, res) => {
+    Weight.find({ date: { $gte: monthFilter, $lte: currentDate}})
+        .then((result) => {
+            res.render('index', {weights: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get('/90days', (req, res) => {
+    Weight.find({ date: { $gte: days90Filter, $lte: currentDate}})
+        .then((result) => {
+            res.render('index', {weights: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get('/180days', (req, res) => {
+    Weight.find({ date: { $gte: days180Filter, $lte: currentDate}})
+        .then((result) => {
+            res.render('index', {weights: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+app.get('/year', (req, res) => {
+    Weight.find({ date: { $gte: yearFilter, $lte: currentDate}})
+        .then((result) => {
+            res.render('index', {weights: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
 
 app.post('/', (req, res) => {
     const weight = new Weight(req.body);

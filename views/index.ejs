@@ -11,9 +11,9 @@
 
     <main>
         <h1>Track My Weight</h1>
-        <form action="/" method="POST">
+        <form action="./" method="POST">
             <label for="weight"></label>
-            <input id="weight" type="number" step="0.1" name="weight" placeholder="Input Weight In kg">
+            <input id="weight" type="number" step="0.1" name="weight" placeholder="Input Weight In kg" required="true">
             <label for="date"></label>
             <!--<input type="date" name="date" id="date" value="<%= Date() %> "> -->
             <input type="date" name="date" id="date">
@@ -21,12 +21,12 @@
         </form>
  
         <div class="controls">
-            <button class="week date-button">Week</button>
-            <button class="month date-button">Month</button>
-            <button class="days-90 date-button">90 Days</button>
-            <button class="days-180 date-button">180 Days</button>
-            <button class="year date-button">1 Year</button>
-            <button class="all date-button">All</button>
+            <button type="button" onclick="location.href='/week'" class="week date-button">Week</button>
+            <button type="button" onclick="location.href='/month'" class="month date-button">Month</button>
+            <button type="button" onclick="location.href='/90days'" class="days-90 date-button">90 Days</button>
+            <button type="button" onclick="location.href='/180days'" class="days-180 date-button">180 Days</button>
+            <button type="button" onclick="location.href='/year'" class="year date-button">1 Year</button>
+            <button type="button" onclick="location.href='/'" class="all date-button">All</button>
         </div>
         
         
@@ -35,9 +35,12 @@
         <% if (weights.length > 0) { %>
         <% weights.forEach(weight => { %>
             
-            <p><%= weight.date.toString().substr(0, 15) %> </p>
-            <h3><%= weight.weight %>kg </h3>
-            <a class="delete" data-doc="<%= weight._id %> ">Delete</a>
+            <div class="weight-container">
+                <p><%= weight.date.toString().substr(0, 15) %> </p>
+                <h4><%= weight.weight %>kg </h4>
+                <a class="delete" data-doc="<%= weight._id %> ">Delete</a>
+            </div>
+            
         <% }) %>  
 
         <% } else { %>

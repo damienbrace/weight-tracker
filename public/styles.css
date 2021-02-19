@@ -5,8 +5,9 @@
 }
 
 main{
+    padding: 50px;
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -23,14 +24,15 @@ form input, button{
 }
 
 .delete{
+    display: block;
     cursor: pointer;
-    background-color: #f74c43;
+    background-color: #ee635c;
     color: white;
-    min-width: 100px;
-    padding: 5px 0;
+    min-width:#ff2014 100px;
     text-align: center;
     border-radius: 5px;
-    margin-top: 20px;
+    padding: 5px 10px;
+    
 }
 
 .delete:hover{
@@ -90,4 +92,15 @@ form input, button{
 
 #date{
     min-height: 30px;
+}
+
+.weight-container{
+    display: flex;
+    min-width: 380px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c9c9c9;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
 }
