@@ -101,6 +101,5 @@ form input, button{
     align-items: center;
     border-bottom: 1px solid #c9c9c9;
     text-align: center;
-    margin: 20px;
-    padding: 20px;
+    padding: 5px 0 5px 0;
 }
